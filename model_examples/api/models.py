@@ -9,3 +9,16 @@ class Simple(models.Model):
 
     def __str__(self):
         return self.url
+
+
+class DateExample(models.Model):
+    the_date = models.DateTimeField()
+
+
+class Language(models.Model):
+    name = models.CharField(max_length=10)
+
+
+class Framework(models.Model):
+    name = models.CharField(max_length=10)
+    language = models.ForeignKey(Language,on_delete=models.CASCADE)
